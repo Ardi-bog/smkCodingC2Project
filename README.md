@@ -26,3 +26,7 @@ Total Data Covid-19 Keseluruhan Negara Indonesia
 Halaman Profil 
 
 ![Screenshot_20200518_044149_com example bgsmkcoding](https://user-images.githubusercontent.com/57175382/82161203-f3d42500-98c4-11ea-9b23-8d0e0928a6c9.jpg)
+
+
+Link Aplikasi
+https://drive.google.com/open?id=1ejvQgWXMljt2jQu-JazfrEmtzdu7lQ8Z
