@@ -22,3 +22,7 @@ Data Provinsi Indonesia Covid-19
 Total Data Covid-19 Keseluruhan Negara Indonesia 
 
 ![Screenshot_20200518_044439_com example bgsmkcoding](https://user-images.githubusercontent.com/57175382/82161023-adca9180-98c3-11ea-8b50-b7f9faa9faf9.jpg)
+
+Halaman Profil 
+
+![Screenshot_20200518_044149_com example bgsmkcoding](https://user-images.githubusercontent.com/57175382/82161203-f3d42500-98c4-11ea-9b23-8d0e0928a6c9.jpg)
