@@ -33,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
             json.put("username", et_username.text.toString())
             json.put("password", et_password.text.toString())
 
-            progressDialog!!.setMessage("Sign Up Process...")
+            progressDialog!!.setMessage("Proses Registrasi")
             showDialog()
 
             ApiService.loginApiCall().doRegister(

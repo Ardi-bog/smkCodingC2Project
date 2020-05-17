@@ -21,10 +21,10 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/txtJudul"
+                android:id="@+id/txtCountry"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Judul"
+                android:text="Provinsi"
                 android:textSize="18sp"
                 android:textStyle="bold"/>
 
@@ -33,19 +33,63 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-
                 <TextView
-                    android:id="@+id/txtDeskripsi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Deskripsi"
+                    android:text="Positif     : "
+                    android:drawablePadding="4dp"/>
+
+                <TextView
+                    android:id="@+id/txtConfirmed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Confirmed"
                     android:textColor="#332AF4"
                     android:textSize="14sp"
                     android:layout_marginRight="8dp"/>
 
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sembuh   : "
+                    android:drawablePadding="4dp"/>
+
+                <TextView
+                    android:id="@+id/txtRecovered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recovered"
+                    android:textColor="#4CAF50"
+                    android:textSize="14sp"
+                    android:layout_marginRight="8dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Meninggal: "
+                    android:drawablePadding="4dp"/>
+
+                <TextView
+                    android:id="@+id/txtDeaths"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deaths"
+                    android:textColor="#F44336"
+                    android:textSize="14sp"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 

@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login() {
-        progressDialog!!.setMessage("Login Process...")
+        progressDialog!!.setMessage("Proses Login")
         showDialog()
 
         val stringRequest: StringRequest = object : StringRequest(

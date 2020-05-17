@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
-    private val JUMLAH_MENU = 3
+    private val JUMLAH_MENU = 4
 
     override fun createFragment(position: Int): Fragment {
         when (position){
@@ -13,7 +13,9 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter
             }
             1 -> {return WorldFragment()
             }
-            2 -> {return ProfilFragment()
+            2 -> {return TotalFragment()
+            }
+            3 -> {return ProfilFragment()
             }
             else -> {
                 return NewsFragment()
