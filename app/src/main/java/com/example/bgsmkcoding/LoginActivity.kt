@@ -1,8 +1,10 @@
 package com.example.bgsmkcoding
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
+import android.os.Build.MODEL
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -12,13 +14,17 @@ import com.android.volley.Request.Method.POST
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import java.lang.reflect.Method
 import java.math.BigInteger
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private var hasilmd5: String? = null
+    private var auth: FirebaseAuth? = null
+    private val RC_SIGN_IN = 1
     private var progressDialog: ProgressDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +32,16 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         progressDialog = ProgressDialog(this)
+        progress.visibility = View.GONE
+        login.setOnClickListener(this)
+        auth = FirebaseAuth.getInstance()
 
+        if(auth!!.currentUser == null){
+        }else{
+            intent = Intent(applicationContext,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
         val id_user = idUser
         if (id_user != "null") {
             gotoCourseActivity()
@@ -130,5 +145,36 @@ class LoginActivity : AppCompatActivity() {
             val preferences = getSharedPreferences("Settings", Context.MODE_PRIVATE)
             return preferences.getString("id_user", "null")
         }
+
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?
+        ) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == RC_SIGN_IN) {
+            if (resultCode == Activity.RESULT_OK){
+                Toast.makeText(this, "Login Berhasil" , Toast.LENGTH_SHORT).show()
+                intent = Intent(applicationContext,MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                progress.visibility = View.GONE
+                Toast.makeText(this, "Login Dibatalkan", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+        override fun onClick(v: View?) {
+        startActivityForResult(
+            AuthUI.getInstance()
+            .createSignInIntentBuilder()
+            .setAvailableProviders(listOf(AuthUI.IdpConfig.GoogleBuilder().build()))
+            .setIsSmartLockEnabled(false)
+            .build(),
+            RC_SIGN_IN)
+
+        progress.visibility = View.VISIBLE
+    }
 
 }
